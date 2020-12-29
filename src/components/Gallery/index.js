@@ -4,7 +4,7 @@ import PhotoList from '../PhotoList';
 
 
 function Gallery({ currentCategory }) {
-    const { name, description} = currentCategory;
+    const { name, description } = currentCategory;
 
     return (
         <section>
@@ -14,7 +14,7 @@ function Gallery({ currentCategory }) {
             <p>
                 {description}
             </p>
-           <PhotoList category={currentCategory.name} />
+            <PhotoList category={currentCategory.name} />
         </section>
     );
 }
