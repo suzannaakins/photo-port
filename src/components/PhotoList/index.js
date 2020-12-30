@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import Modal from '../Modal';
 
 const PhotoList = ({ category }) => {
-
+    const toggleModal = (image, i) => {
+        //curent photo
+    }
 
     const [photos] = useState([
         {
@@ -105,17 +108,21 @@ const PhotoList = ({ category }) => {
 
     return (
         <div>
-        <div className="flex-row">
-          {currentPhotos.map((image, i) => (
-            <img
-              src={require(`../../assets/small/${category}/${i}.jpg`).default}
-              alt={image.name}
-              className="img-thumbnail mx-1"
-              key={image.name}
-            />
-          ))}
+            <div>
+                <Modal />
+            </div>
+            <div className="flex-row">
+                {currentPhotos.map((image, i) => (
+                    <img
+                        src={require(`../../assets/small/${category}/${i}.jpg`).default}
+                        alt={image.name}
+                        className="img-thumbnail mx-1"
+                        onClick={() => toggleModal(image, i)}  
+                        key={image.name}
+                    />
+                ))}
+            </div>
         </div>
-      </div>
     )
 }
 
